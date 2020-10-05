@@ -26,6 +26,7 @@ export class AccountsController {
 
     @Get()
     @ApiOperation({ summary: 'Returns all Accounts records related to the requesting user' })
+    @ApiBearerAuth()
     @ApiOkResponse({ type: AccountDto, isArray: true })
     @ApiInternalServerErrorResponse({ type: HttpErrorMsgDto })
     @ApiUnauthorizedResponse({ type: HttpErrorMsgDto })
@@ -40,6 +41,7 @@ export class AccountsController {
         {
             summary: 'Creates a new account for the requesting user',
         })
+    @ApiBearerAuth()
     @ApiBody({ type: AccountRequestDto })
     @ApiCreatedResponse({ type: AccountDto })
     @ApiBadRequestResponse({ type: HttpErrorMsgDto })
