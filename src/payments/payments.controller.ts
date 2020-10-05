@@ -30,6 +30,7 @@ export class PaymentsController {
             summary: 'Returns all Payments',
             description: 'If requesting user has the BackOffice role then will return the payments of all users accounts else will return only the payments of the requesting user',
         })
+    @ApiBearerAuth()
     @ApiOkResponse({ type: AccountDto, isArray: true })
     @ApiInternalServerErrorResponse({ type: HttpErrorMsgDto })
     @ApiUnauthorizedResponse({ type: HttpErrorMsgDto })
@@ -44,6 +45,7 @@ export class PaymentsController {
         {
             summary: 'Gets the payment with the given id',
         })
+    @ApiBearerAuth()
     @ApiOkResponse({ type: AccountDto, isArray: true })
     @ApiInternalServerErrorResponse({ type: HttpErrorMsgDto })
     @ApiUnauthorizedResponse({ type: HttpErrorMsgDto })
@@ -58,6 +60,7 @@ export class PaymentsController {
         {
             summary: 'Creates a new Payment',
         })
+    @ApiBearerAuth()
     @ApiBody({ type: PaymentRequestDto })
     @ApiCreatedResponse({ type: PaymentDto })
     @ApiBadRequestResponse({ type: HttpErrorMsgDto })
@@ -74,6 +77,7 @@ export class PaymentsController {
         {
             summary: 'Approves a Payment',
         })
+    @ApiBearerAuth()
     @ApiParam({ name: 'paymentId', type: 'string' })
     @ApiBadRequestResponse({ type: HttpErrorMsgDto })
     @ApiInternalServerErrorResponse({ type: HttpErrorMsgDto })
@@ -89,6 +93,7 @@ export class PaymentsController {
         {
             summary: 'Cancels a Payment',
         })
+    @ApiBearerAuth()
     @ApiParam({ name: 'paymentId', type: 'string' })
     @ApiBadRequestResponse({ type: HttpErrorMsgDto })
     @ApiInternalServerErrorResponse({ type: HttpErrorMsgDto })
