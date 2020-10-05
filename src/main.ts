@@ -25,6 +25,7 @@ async function bootstrap() {
     .setDescription('Globe Payment Services API description')
     .setVersion('1.0')
     .addTag('Globe Payment Services')
+    .addBearerAuth()
     .build();
   const document = SwaggerModule.createDocument(app, options);
 
