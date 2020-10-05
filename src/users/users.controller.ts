@@ -24,6 +24,7 @@ export class UsersController {
 
     @Get()
     @ApiOperation({ summary: 'Returns all Users records' })
+    @ApiBearerAuth()
     @ApiOkResponse({ type: UserDto, isArray: true })
     @ApiInternalServerErrorResponse({ type: HttpErrorMsgDto })
     @ApiUnauthorizedResponse({ type: HttpErrorMsgDto })
@@ -38,6 +39,7 @@ export class UsersController {
         {
             summary: 'Creates a new user',
         })
+    @ApiBearerAuth()
     @ApiBody({ type: UserRequestDto })
     @ApiCreatedResponse({ type: UserDto })
     @ApiBadRequestResponse({ type: HttpErrorMsgDto })
