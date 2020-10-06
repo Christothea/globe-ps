@@ -78,6 +78,7 @@ $ npm run start:prod
 - **Enhance scalability**: Refactor the whole solution into **an asynchronous event driven architecture**, orchestrating through a message bus (e.g. Confluent Kafka)
 - Implement Web socket and/or use MQTT, for notifying end user about data updates, like payments (approvals, cancellations, etc)
 - **Source code refactor**: Eliminate replication, and generalize shared functionality (e.g. database access)
+- **Pagination** on get requests which may return high volume of data (e.g. Payments) 
 
 ## Business
 
@@ -95,6 +96,7 @@ $ npm run start:prod
     - Enhance the User model with extra context (e.g. email, phone, nationality, date of birth, address, language, etc)
 - **Payments Management:**
     - Automate the approval process
+    - Allow filtering on get payments
 - **Enhance the security:**
     - 2 factor authentication for user payments confirmation
     - User password strength policies
