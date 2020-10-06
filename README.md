@@ -84,7 +84,7 @@ $ npm run start:prod
 
 - **Currencies convertion:**
     - Connect to prices feed
-    - Properly convert between payments currency and related accounts currencies
+    - Properly convert between payments currency and related accounts currency
 - **Accounts Management:**
     - Constraint on maximum allowed number of Accounts by User
     - Support for Accounts sharing between users
@@ -101,3 +101,4 @@ $ npm run start:prod
     - 2 factor authentication for user payments confirmation
     - User password strength policies
 - **Integration with Trading Platforms**, for automatic money transfers (e.g. Metaquotes MT4, MT5)
+- **Integration with third party Payment Systems**
